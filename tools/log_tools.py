@@ -12,8 +12,7 @@ def read_log_file(file_path: str) -> str:
         Log file content as a string.
 
     Raises:
-        FileNotFoundError: If the log file does not exist.
-        ValueError: If the file is empty.
+        FileNotFoundError: If the file does not exist.
     """
     path = Path(file_path)
 
@@ -23,6 +22,6 @@ def read_log_file(file_path: str) -> str:
     content = path.read_text(encoding="utf-8").strip()
 
     if not content:
-        raise ValueError("Log file is empty")
+        return "[no output captured in log file]\n"
 
     return content
