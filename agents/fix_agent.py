@@ -59,7 +59,7 @@ Return ONLY valid JSON matching this shape:
     }
   ],
   "rollback_plan_if_fix_fails": ["string"],
-  "documentation_snippets": ["links or doc sections operators should read"],
+  "documentation_snippets": ["each entry plain text: link or doc title/section only"],
   "disclaimer": "string stating output is recommendations only and must be validated"
 }
 """
