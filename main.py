@@ -4,6 +4,7 @@ import sys
 from agents.fix_agent import run_fix_agent
 from agents.log_agent import run_log_agent
 from agents.rca_agent import run_rca_agent
+from agents.release_agent import run_release_agent
 
 
 def main() -> None:
@@ -26,6 +27,10 @@ def main() -> None:
     )
     print("\n--- Fix plan (fix agent; recommendations only; not applied) ---")
     print(json.dumps(plan, indent=2))
+
+    decision = run_release_agent(incident_report=incident, rca=rca, fix_plan=plan)
+    print("\n--- Release gate (release agent) ---")
+    print(json.dumps(decision, indent=2))
 
 
 if __name__ == "__main__":
